@@ -1,0 +1,85 @@
+.DetailsAreaDiv
+{
+  width:99%;
+  background-color: #ECF1FA;
+  border: solid 1px #666666;
+}
+
+.DetailsViewDivSummaryMode
+{
+  width:100%;
+}
+
+.DetailsViewDivNonSummaryMode
+{
+  width:100%;
+  border-top: solid 1px #666666;
+  border-bottom: solid 1px #666666;
+}
+
+.DetailsViewTable
+{
+  width: 100%;
+}
+
+.DetailsViewTable tr
+{
+  vertical-align: top;
+}
+
+.DetailsViewTable td
+{
+  padding: 5px;
+}
+
+.DetailsView
+{
+  border: 1px solid #666666;
+  background-color: white;
+  width: 100%;
+}
+
+.DetailsViewHeader
+{
+  color: #444444;
+  background-color: #BBC6D2;
+  font-weight: bold;
+}
+
+.DetailsViewHeader td
+{
+  padding: 3px;
+  border-bottom: 1px solid #666666;
+}
+
+.DetailsViewRow
+{
+}
+
+.DetailsViewEditRow td
+{
+  vertical-align: middle;
+}
+
+.DetailsViewEditRow input, select, textarea
+{
+  vertical-align: middle;
+}
+
+.DetailsViewFieldHeader
+{
+  font-weight: bold;
+  width: 35%
+}
+
+.DetailsViewFooter
+{
+}
+
+.DetailsViewValuationDateHeader
+{
+  color: #444444;
+  background-color: #BBC6D2;
+  font-weight: bold;
+  border-bottom: 1px solid #666666;
+}

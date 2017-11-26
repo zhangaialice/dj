@@ -1,0 +1,176 @@
+.GridViewDiv
+{
+  width:99%;
+  background-color: #CCCCCC;
+  border: solid 1px #666666;
+}
+
+.GridViewFullDiv
+{
+  width:100%;
+  background-color: #CCCCCC;
+  border: solid 1px #666666;
+}
+
+.GridNonSummaryMode
+{
+  width: 100%;
+  border-top: solid 1px #666666;
+  border-bottom: solid 1px #666666;
+}
+
+.GridSummaryMode
+{
+  width: 100%;
+}
+
+.GridHeader
+{
+  background-color: #BBC6D2;
+  color: #444444;
+}
+
+.GridHeader th
+{
+  padding: 3px;
+  text-align: left;
+  border-bottom: solid 1px #666666;
+  font-weight: normal;
+}
+
+.GridHeader a
+{
+  color: #1572AC;
+  font-weight: normal;
+}
+
+.GridDataRow
+{
+  cursor: default;
+  background-color: #FFFFFF;
+}
+
+.GridDataRow td
+{
+  padding: 2px;
+  border-bottom: solid 1px #999999;
+}
+
+.GridAlternatingDataRow
+{
+  cursor: default;
+  padding: 2px;
+  background-color: #EEEEEE;
+}
+
+.GridAlternatingDataRow td
+{
+  padding: 2px;
+  border-bottom: solid 1px #AAAAAA;
+}
+
+.GridEmptyDataRow
+{
+  cursor: default;
+  background-color: #FFFFFF;
+}
+
+.GridPagerStyle
+{
+  color: #444444;
+  font-weight: bold;
+  cursor: default;
+  padding: 3px;
+  background-color: #BBC6D2;
+}
+
+.GridPagerStyle a
+{
+  color: #444444;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.GridPageCount
+{
+  color: #444444;
+  font-weight: normal;
+  font-size: 11px;
+  padding-right: 5px;
+}
+
+.GridViewCheckBoxField
+{
+  text-align: center;
+  width: 1%; /* force as small as possible */
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.GridViewCheckBoxField input
+{
+  border: 0px;
+}
+
+.GridViewCheckBoxCollection
+{
+  text-align: left;
+  width: 1%; /* force as small as possible */
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.GridViewCheckBoxCollection input
+{
+  border: 0px;
+}
+
+.GridViewCheckBoxCollectionLeft
+{
+  text-align: left;
+  width: 1%; /* force as small as possible */
+  padding-left: 1px;
+  padding-right: 1px;
+  white-space: nowrap;
+}
+
+.GridViewCheckBoxCollectionLeft input
+{
+  border: 0px;
+
+
+.GridViewButtonField
+{
+  text-align: center;
+  width: 1%; /* force as small as possible */
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.GridFooter
+{
+  background-color: #CCCCCC;
+}
+
+.GridFooter td
+{
+  padding: 3px;
+  border-top: solid 1px #666666;
+}
+
+.GridViewSubDiv
+{
+  width:100%;
+  background-color: #CCCCCC;
+  border: 0px;
+}
+
+.GridColumnNoPadding
+{
+  padding: 0px!important;
+  margin: 0px!important;
+  border-top: 0px!important;
+  border-bottom: 0px!important;
+  border-left: solid 1px #666666!important;  
+}

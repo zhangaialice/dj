@@ -1,0 +1,61 @@
+.VAMErrorText
+{
+   color: #D11242;
+}
+
+.VAMFieldWithError
+{
+   background-color: #FFCC66;
+}
+
+.VAMCheckBoxWithError
+{
+   background-color: #FFCC66;
+}
+
+.VAMListWithError
+{
+   background-color: #FFCC66;
+}
+
+.VAMValSummary
+{
+   color: #D11242;
+}
+
+.VAMValSummaryHeader
+{
+   color: #D11242;
+}
+
+.VAMValSummaryHeader TR
+{
+   color: #D11242;
+}
+
+.VAMValSummaryErrors
+{
+   color: #D11242;
+   margin-top:6px;
+}
+
+.VAMValSummaryFooter
+{
+   color: #D11242;
+}
+
+.VAMValSummaryFooter TR
+{
+   color: #D11242;
+}
+
+.VAMRequiredFieldMarker
+{
+  vertical-align: middle;
+}
+
+.VAMRequiredFieldsDescription
+{
+   font-size: 8pt;
+   font-style: italic;
+}

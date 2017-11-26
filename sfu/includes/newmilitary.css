@@ -1,0 +1,21 @@
+html, body { height: 100%; padding: 0; margin: 0; }
+
+#TF{ width: 90%;}
+#diva { background: white;text-align: center;}
+#divb { background: white;text-align: center;}
+
+label {
+font-size: 20;
+}
+
+#content{position: fixed;
+top:100px;
+}
+
+#content div {
+    float:left;
+    width:90%;
+    height:400px;
+    background: transparent;
+    display:inline-block;
+  }

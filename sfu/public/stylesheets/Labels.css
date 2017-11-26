@@ -1,0 +1,117 @@
+.pageTitle
+{
+  font-family: verdana;
+  font-size: 13px;
+  font-weight: bold;
+  color: #1572AC;
+}
+
+.sectionTitle
+{
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: bold;
+  color: #D11242;
+}
+
+.sectionTitle2
+{
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.sectionSubTitle
+{
+  font-family: verdana;
+  font-size: 11px;
+  font-weight: bold;
+  color: #333333;  
+}
+
+.informationTitle
+{
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: bold;
+  color: #D11242;
+}
+
+.errorsLabel
+{
+  color: #D11242;
+}
+
+.messagesLabel
+{
+  color: #333333;
+}
+
+.warningLabel
+{
+  color: #D11242;
+}
+
+.currentClientEngagmentTitle
+{
+  font-family: verdana;
+  font-size: 11px;
+  font-weight: bold;
+  color: #444444;
+}
+
+.currentClientEngagment
+{
+  font-family: verdana;
+  font-size: 11px;
+  color: #444444;
+}
+
+.instrumentNameLabel
+{
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  color: #333399;
+}
+
+.validatorErrorSummary
+{
+  font-size: 11px;
+  color: #000066;
+}
+
+.validatorError
+{
+  font-size: 11px;
+  color: #000066;
+}
+
+.smallInformationText
+{
+  font-family: verdana;
+  font-size: 11px;
+  font-style:italic;
+}
+
+.selectedReportView
+{
+  font-weight: bold;
+}
+
+.radioButtonList
+{
+  font-weight: bold;
+}
+
+.radioButtonListDescription
+{
+  font-weight: normal;
+}
+
+.boldLabel
+{
+  font-weight: bold;
+}

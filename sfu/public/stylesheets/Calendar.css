@@ -1,0 +1,177 @@
+@Media print
+{
+  .CSCCalendar
+  {
+     display: none;
+  }
+}
+
+@Media screen
+{
+  .CSCCalendar
+  {
+     border: solid 1px #000000;
+     font-size: 8pt;
+     background-color: #FFFFFF;
+  }
+}
+
+@Media all
+{
+  .CSCCalendar TABLE
+  {
+     font-size: 8pt;
+  }
+
+  /* prevent external img styles from affecting these styles */
+  .CSCCalendar img
+  {
+     background-color:transparent;
+     margin-left: 0px;
+     margin-top: 0px;
+     margin-bottom:0px;
+     margin-right:0px;
+  }
+
+  /* used on server side only version */
+  .CSCCalendar A
+  {
+     color:black;
+     text-decoration:none;
+  }
+
+  .CSCWeekRowsTable
+  {
+     border: solid 1px #000000;
+     font-size: 8pt;
+  }
+
+  .CSCWeekRowsTable_NS70  /* for Netscape 7.0x only */
+  {
+     font-size: 8pt;
+  }
+
+  /* The next few are for the day cells. Formatted day cells that use nested tables need to carry the styles into their inner TR tags */
+
+  .CSCDay, .CSCDay TR
+  {
+     cursor: pointer;  /* W3C approved hand. */
+     cursor: hand;   /* IE specific hand */
+  }
+
+  .CSCSelectedDay, .CSCSelectedDay TR
+  {
+     background-color: #FFCC66;
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCSelectedToday, .CSCSelectedToday TR
+  {
+     font-weight: bold;
+     background-color: #FFCC66;
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCToday, .CSCToday TR
+  {
+     font-weight: bold;
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCSpecialDay, .CSCSpecialDay TR
+  {
+     cursor: pointer;
+     cursor: hand;
+     background-color: #660099;
+  }
+
+  .CSCOtherMonthDays, .CSCOtherMonthDays TR
+  {
+     cursor: default;
+     background-color: #CCCCCC;
+     color: #666666;
+  }
+
+  .CSCOutsideRangeDay
+  {
+     cursor: default;
+     color: #666666;
+  }
+
+  .CSCWeekNumberColumn
+  {
+     background-color: #BBC6D2;
+     color: #444444;
+  }
+
+  .CSCDayHeader
+  {
+     font-size: 7pt;
+     background-color: #BBC6D2;
+     color: #444444;
+  }
+
+  .CSCDayHeaderCell
+  {
+  }
+
+  .CSCHeaderTable
+  {
+     margin-top: 2px;
+     margin-bottom: 2px;
+  }
+
+  /* use to establish a background color for CSCHeaderTable */
+  .CSCHeaderTable TABLE
+  {
+     background-color:transparent;
+  }
+
+  .CSCHeaderRows
+  {
+     font-size: 8pt;
+     cursor: default;
+  }
+
+  .CSCHeaderRows TR
+  {
+     background-color:transparent;
+  }
+
+  .CSCIncrementalButtons
+  {
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCIncrementalButtonsPressed
+  {
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCJumpButtons
+  {
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCJumpButtonsPressed
+  {
+     cursor: pointer;
+     cursor: hand;
+  }
+
+  .CSCFooterTable
+  {
+  }
+
+  .CSCFooterTable TABLE
+  {
+     background-color:transparent;
+  }
+}
+

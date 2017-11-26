@@ -1,0 +1,34 @@
+//calculate total of Canadian Equity for endowment
+				$query_t  = " SELECT SUM(Market_Value) AS TotalMarketValue";
+							$query_t .= " FROM holding ";
+							$query_t .= " WHERE Category = Endowment";
+							$query_t .= " AND Asset_Class = Canadian Equity";
+							$query_t .= " AND Year ='2016'";
+							$report_t = mysqli_query($connection, $query_t);
+							// Test if there was a query error
+							if (!$report_t) {die("Database query failed.");};
+							while($result = mysqli_fetch_assoc($report_t)){ $T_CE = $result['TotalMarketValue'];}
+					
+								
+								
+		//calculate total of global equity for endowment
+			$query_t  = " SELECT SUM(Market_Value) AS TotalMarketValue";
+								$query_t .= " FROM holding ";
+								$query_t .= " WHERE Category = Endowment";
+								$query_t .= " AND Asset_Class = Global Equity";
+								$query_t .= " AND Year ='2016'";
+								$report_t = mysqli_query($connection, $query_t);
+								// Test if there was a query error
+								if (!$report_t) {die("Database query failed.");};
+								while($result = mysqli_fetch_assoc($report_t)){ $T_GE = $result['TotalMarketValue'];}
+		//calculate total equity
+			$query_t  = " SELECT SUM(Market_Value) AS TotalMarketValue";
+					$query_t .= " FROM holding ";
+					$query_t .= " WHERE Category = Endowment";
+					$query_t .= " AND Asset_Class =Global Equity";
+					$query_t .= " AND Year ='2016'";
+					$report_t = mysqli_query($connection, $query_t);
+					// Test if there was a query error
+					if (!$report_t) {die("Database query failed.");};
+					while($result = mysqli_fetch_assoc($report_t)){ $T_TE = $result['TotalMarketValue'];}
+								

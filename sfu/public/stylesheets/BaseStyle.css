@@ -1,0 +1,128 @@
+html, form
+{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* new: table*/ 
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+tr:hover {background-color: #f5f5f5}
+
+
+/*new: dropdown*/ 
+<style>
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+
+<div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+    <p>Hello World!</p>
+  </div>
+</div>
+
+body
+{
+  background-color:White;
+  font-family: verdana;
+  font-size:11px;
+  color: #333333;
+  height: 100%;
+  margin: 0;
+}
+
+a
+{
+  color: #1572AC;
+}
+
+a:hover
+{
+  color: #D11242;
+}
+
+img
+{
+  border: 0;
+}
+
+ul
+{
+  list-style-type:disc;
+  list-style-position:inside;
+  padding-left:30px;
+  margin-left:0px;
+  margin-top:10px;
+}
+
+li
+{
+  font-family: verdana;
+  font-size:11px;
+  list-style-type:disc;
+  list-style-position:inside;
+}
+
+hr
+{
+  color: #BBBBBB;
+  background-color: #BBBBBB;
+  height: 2px;
+}
+
+input
+{
+  font-family: verdana;
+  font-size: 11px;
+  border: solid 1px #999999;
+  padding: 2px;
+}
+
+select
+{
+  font-family: Verdana;
+  font-size: 11px;
+  border: solid 1px #999999;
+}
+
+.checkbox
+{
+  text-align: center;
+  width: 1%; /* force as small as possible */
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.checkbox input
+{
+  border: 0px;
+}
+
+
+
+
+
+
+
+
+
