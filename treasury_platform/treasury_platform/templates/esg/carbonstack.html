@@ -1,0 +1,136 @@
+{% extends "treasury_platform/header.html" %}
+{% block content %}
+<form action='' method='POST'>
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Submit" />
+</form>
+
+
+<title>Breakdown of Asset-Manager Emission Per Million by Industry</title>
+<style>
+canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+</style>
+<div style="width: 90%">
+	<canvas id="canvas"></canvas>
+</div>
+<!--<button id="randomizeData">Randomize Data</button>-->
+<script>
+	var barChartData = {
+		labels: ['Pyramis', 'Bissett', 'NG', 'BMO', 'Henderson', 'Fiera', 'SIAS', 'BEAM', 'SPI', 'SPG'],
+		datasets: [
+		 {% for item1, item2, item3, item4,item5, item6, item7, item8, item9,item10,item11,item12 in list%}
+				{
+                    label: '{% if list %}{{ item1 }}{% endif %}',
+                    backgroundColor: "{% if list %}{{ item12|title }}{% endif %}",
+                    data: [
+                    {% if list %}{{ item2 }}{% endif %},
+                    {% if list %}{{ item3 }}{% endif %},
+                    {% if list %}{{ item4 }}{% endif %},
+                    {% if list %}{{ item5 }}{% endif %},
+                    {% if list %}{{ item6 }}{% endif %},
+                    {% if list %}{{ item7 }}{% endif %},
+                    {% if list %}{{ item8 }}{% endif %},
+                    {% if list %}{{ item9 }}{% endif %},
+                    {% if list %}{{ item10 }}{% endif %},
+                    {% if list %}{{ item11 }}{% endif %}
+                    ]
+                  },
+
+        {% endfor %}
+		]
+	};
+	window.onload = function() {
+		var ctx = document.getElementById("canvas").getContext("2d");
+
+		window.myBar = new Chart(ctx, {
+			type: 'bar',
+			data: barChartData,
+			options: {
+				title:{
+					display:true,
+					text:"The Breakdown of Emission Per Million by Industry",
+					fontSize:24
+				},
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},
+				responsive: true,
+				scales: {
+					xAxes: [{
+						stacked: true,
+					}],
+					yAxes: [{
+						stacked: true
+					}]
+				}
+			}
+		});
+
+	<!--myBar.data.datasets[0].backgroundColor = "yellow";-->
+	<!--myBar.update();-->
+	};
+	document.getElementById('randomizeData').addEventListener('click', function() {
+		barChartData.datasets.forEach(function(dataset, i) {
+			dataset.data = dataset.data.map(function() {
+				return randomScalingFactor();
+			});
+		});
+		window.myBar.update();
+	});
+</script>
+{% load humanize %}
+<table class="table">
+	  <thead>
+		<tr>
+			<th scope="col"> Sector </th>
+			{% for entry in managerlist %}
+				<th scope="col">{{ entry }}</th>
+			{% endfor %}
+		</tr>
+	  </thead>
+	  <tbody>
+	  {% for item1, item2, item3, item4,item5, item6, item7, item8, item9,item10,item11,item12 in list %}
+		<tr>
+		  <td>{% if list %}{{ item1}}{% endif %}</td>
+		  <td>{% if list %}{{ item2|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item3|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item4|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item5|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item6|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item7|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item8|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item9|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item10|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item11|floatformat:0|intcomma }}{% endif %}</td>
+		</tr>
+	  {% endfor %}
+
+	  </tbody>
+	</table>
+<div>
+	<p><span style="font-weight:bold";> Note:</span><br>
+		<br>1. The table and chart show the Breakdown of Carbon Emission Per Million by Sector, for all asset managers <br>
+	<p>
+
+</div>
+<!--{{alldata}}-->
+<!--{{ managerlist}}-->
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+{% extends "treasury_platform/header.html" %}
+{% block content %}
+
+	<div>
+
+		<form action='' method='POST'>
+			{% csrf_token %}
+			<div class="one-fifth">
+				<label for="year1">Year 1</label>
+				{{ form.your_year1}}
+			</div>
+			<div class="one-fifth">
+			 	<label for="year2">Year 2</label>
+				{{ form.your_year2}}
+			</div>
+			<div class="one-fifth">
+			 	<label for="output">Group By</label>
+				{{ form.your_output}}
+			</div>
+
+			<input type="submit" value="Submit" />
+		</form>
+
+	</div>
+	<div>
+	{% load humanize %}
+	<canvas id="myChart" width="400" height="400"></canvas>
+	<script>
+	var str1='Fossil Fuel Analysis'
+	var str2=" - By {{group|title}}".replace(/&quot;/g,"\"")
+	var str = str1+str2
+
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: {{ manager|safe }},
+			datasets: [{
+				label: {{ year1}},
+				data: {{ data1 }},
+				backgroundColor: Array(20).fill('rgba(255, 99, 132, 0.2)'),
+				borderColor: Array(20).fill('rgba(54, 162, 235, 1)'),
+				borderWidth: 1
+			},
+			{
+				label: {{ year2 }},
+				data: {{ data2 }},
+				backgroundColor: Array(20).fill('rgba(75, 192, 192, 0.2)'),
+				borderColor: Array(20).fill('rgba(54, 162, 235, 1)'),
+				borderWidth: 1
+			}
+
+	]
+		},
+		options: {
+			responsive: true,
+			title:{
+			   display: true,
+			   text: str,
+			   fontSize:24
+			   },
+			maintainAspectRatio: false,
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true,
+						callback: function(value, index, values) {
+						perc = value * 100
+						deci = perc.toFixed(2)
+                        return deci + ' %';}
+					}
+				}],
+				xAxes: [{
+					ticks: {
+						fontSize:16
+					}
+				}]
+			}
+		}
+	});
+	</script>
+
+
+	</div>
+
+	<table class="table">
+	  <thead>
+		<tr>
+		  <th scope="col">{{ group|title }}</th>
+		  <th scope="col">{{ year1 }}</th>
+		  <th scope="col">{{ year2 }}</th>
+		</tr>
+	  </thead>
+	  <tbody>
+	  {% for item1, item2, item3 in list %}
+		<tr>
+		  <td>{% if list %}{{ item1}}{% endif %}</td>
+		  <td>{% if list %}{{ item2 }}{% endif %}</td>
+		  <td>{% if list %}{{ item3 }}{% endif %}</td>
+		</tr>
+	  {% endfor %}
+
+	  </tbody>
+	</table>
+	<div>
+
+		<!--{{ data1 }}-->
+		<!--{{ data2 }}-->
+		<!--{{ manager }}-->
+	</div>
+	<div>
+		<p> <span style="font-weight:bold";> Note:</span><br>
+			<br>
+			1. The table and chart show the percentage of fossil fuel holdings by different groups: Asset Class, Manager and Fund. <br>
+		<p>
+			
+	</div>
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{% extends "treasury_platform/header.html" %}
+{% load material_form %}
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+
+
+{% block content %}
+<div>
+	<form action='' method='POST'>
+		{% csrf_token %}
+		<p>result: {{ result }}</p>
+		<p>email: {{ email }}</p>
+		{{ form }}
+
+		<input type="submit" value="Submit" />
+	</form>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    {% form form=form %}{% endform %}
+    <button type="submit" name="_submit" class="btn">Submit</button>
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,143 @@
+
+
+
+{% extends "treasury_platform/header.html" %}
+{% block content %}
+
+	<div>
+
+		<form action='' method='POST'>
+
+			{% csrf_token %}
+			<div class="one-fifth">
+				<label for="year1">Year 1</label>
+				{{ form.your_year1}}
+			</div>
+			<div class="one-fifth">
+			 	<label for="year2">Year 2</label>
+				{{ form.your_year2}}
+			</div>
+			<div class="one-fifth">
+			 	<label for="group">Group By</label>
+				{{ form.your_group}}
+			</div>
+			<div class="one-fifth">
+			 	<label for="output">Output</label>
+				{{ form.your_output}}
+			</div>
+				<input type="submit" value="Submit" />
+		</form>
+	</div>
+	<div>
+{% load humanize %}
+	<canvas id="myChart" width="200" height="400"></canvas>
+	<script>
+	var str1='Carbon Analysis'
+	var str2=" of {{output|title}}".replace(/&quot;/g,"\"")
+	var str3=" - By {{group|title}}".replace(/&quot;/g,"\"")
+	var str = str1+str2+str3
+
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+		type: 'bar',
+		data: {
+			labels: {{ manager|safe }},
+			datasets: [{
+				label: {{ year1 }},
+				data: {{ data1 }},
+				backgroundColor: Array(30).fill('rgba(255, 99, 132, 0.2)'),
+				borderColor: Array(30).fill('rgba(54, 162, 235, 1)'),
+				borderWidth: 1
+			},
+	{
+				label: {{ year2 }},
+				data: {{ data2 }},
+				backgroundColor: Array(30).fill('rgba(255, 206, 86, 0.2)'),
+				borderColor: Array(30).fill('rgba(54, 162, 235, 1)'),
+				borderWidth: 1
+			}
+
+	]
+		},
+		options: {
+			responsive: true,
+			title:{
+				   display: true,
+			       text: str,
+			       fontSize:24
+			       },
+			maintainAspectRatio: false,
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true,
+						fontSize:16
+					}
+				}],
+				xAxes: [{
+					ticks: {
+						fontSize:16
+					}
+				}]
+			}
+		}
+	});
+	</script>
+
+
+	</div>
+	<!--<div>-->
+		<!--{{ manager }} <br />-->
+		<!--<br />-->
+		<!--{{ data1 }}<br />-->
+		<!--<br />-->
+		<!--{{ data2 }}<br />-->
+		<!--<br />-->
+		<!--{{ sum1 }}<br />-->
+		<!--<br />-->
+		<!--{{ sum2 }}<br />-->
+		<!--<br />-->
+		<!--{{ test }}-->
+	<!--</div>-->
+
+
+	<table class="table">
+	  <thead>
+		<tr>
+		  <th scope="col">{{ group|title }}</th>
+		  <th scope="col">{{ year1 }}</th>
+		  <th scope="col">{{ year2 }}</th>
+		</tr>
+	  </thead>
+	  <tbody>
+	  {% for item1, item2, item3 in list %}
+		<tr>
+		  <td>{% if list %}{{ item1}}{% endif %}</td>
+		  <td>{% if list %}{{ item2|floatformat:0|intcomma }}{% endif %}</td>
+		  <td>{% if list %}{{ item3|floatformat:0|intcomma }}{% endif %}</td>
+		</tr>
+	  {% endfor %}
+
+	  </tbody>
+	</table>
+	<div>
+		<p><span style="font-weight:bold";> Note:</span><br>
+			<br>
+			1. The table and chart show the Carbon Emission, Emission Per Million and Selection Contribution by different groups: Country, Manager, Asset Class, Sector and Fund. <br>
+			2. Emission (for each holding)= (SFU Market Value ÷ Issuer Market Cap) × Issuer Carbon Emission, where Issuer Market Cap and Issuer Carbon Emission are from MSCI<br>
+			3. Emission Per million = Emission (note 1) ÷ Group Market Value.<span style="font-weight:bold";> For example</span>, Emission Per Million for SIAS is calculated by Total Emission of SIAS ÷ Total Portfolio Market Value of SIAS <br>
+			4. Selection Attribution = Emission (note 1) ÷ Total Portfolio Market Value. It represents the carbon emission per million of investment <br>
+			5. Sector is GICS.<br>
+		<p>
+			
+	</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
